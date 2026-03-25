@@ -22,8 +22,8 @@ venv/
 
 # Model files (optional - if large)
 artificates/similarity.pkl
-artificates/movie_list.pkl
 *.pkl
+!artificates/movie_list.pkl
 
 # Logs
 *.log
