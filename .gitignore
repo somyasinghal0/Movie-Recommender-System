@@ -21,7 +21,9 @@ venv/
 .streamlit/secrets.toml
 
 # Model files (optional - if large)
-# *.pkl
+artificates/similarity.pkl
+artificates/movie_list.pkl
+*.pkl
 
 # Logs
 *.log
@@ -29,3 +31,4 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
+
