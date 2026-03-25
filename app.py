@@ -1,6 +1,8 @@
 import pickle
 import streamlit as st
 import requests
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
 
 api_key = st.secrets["TMDB_API_KEY"]
 
@@ -33,7 +35,11 @@ def recommend(movie):
 
 st.header('Movies Recommendation System Using Machine Learning')
 movies = pickle.load(open('artificates/movie_list.pkl', 'rb'))
-similarity = pickle.load(open('artificates/similarity.pkl', 'rb'))
+
+cv = CountVectorizer(max_features=5000, stop_words='english')
+vectors = cv.fit_transform(movies['tags']).toarray()
+
+similarity = cosine_similarity(vectors)
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
