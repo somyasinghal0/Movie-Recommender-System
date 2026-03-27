@@ -21,9 +21,9 @@ venv/
 .streamlit/secrets.toml
 
 # Model files (optional - if large)
-artificates/similarity.pkl
+artifacts/similarity.pkl
 *.pkl
-!artificates/movie_list.pkl
+!artifacts/movie_list.pkl
 
 # Logs
 *.log
